@@ -18,8 +18,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lesson-6.htm">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="373">
               <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+=======
+            <state relative-caret-position="519">
+              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+>>>>>>> lesson-6
             </state>
           </provider>
         </entry>
@@ -106,7 +111,11 @@
       <option name="presentableId" value="Default" />
       <updated>1560857860642</updated>
       <workItem from="1560857869454" duration="594000" />
+<<<<<<< HEAD
       <workItem from="1560871333126" duration="4401000" />
+=======
+      <workItem from="1560871333126" duration="3674000" />
+>>>>>>> lesson-6
     </task>
     <task id="LOCAL-00001" summary="What's the real floor?">
       <created>1560876075655</created>
@@ -119,10 +128,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="4995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1170" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="4268000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1170" extended-state="6" />
+    <editor active="true" />
+>>>>>>> lesson-6
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12057113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -180,8 +197,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lesson-6.htm">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="373">
           <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+=======
+        <state relative-caret-position="519">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+>>>>>>> lesson-6
         </state>
       </provider>
     </entry>
