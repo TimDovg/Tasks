@@ -10,6 +10,8 @@
 <body>
    <script>
       /*
+      CLASS TASKS
+
       1
       Introduction
       The first century spans from the year 1 up to and including the year 100, The second - from the year 101 up to and including the year 200, etc.
@@ -77,6 +79,54 @@
       function removeChar(str){
         if (str.length > 2)
         return str.slice(1, str.length-1);
+      }
+
+      /*
+        HOME TASKS
+
+		1
+		In this kata, you must create a digital root function.
+
+		A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.
+
+		Here's how it works:
+
+		digital_root(16)
+		=> 1 + 6
+		=> 7
+
+		digital_root(942)
+		=> 9 + 4 + 2
+		=> 15 ...
+		=> 1 + 5
+		=> 6
+
+		digital_root(132189)
+		=> 1 + 3 + 2 + 1 + 8 + 9
+		=> 24 ...
+		=> 2 + 4
+		=> 6
+
+		digital_root(493193)
+		=> 4 + 9 + 3 + 1 + 9 + 3
+		=> 29 ...
+		=> 2 + 9
+		=> 11 ...
+		=> 1 + 1
+		=> 2
+		*/
+
+      function digital_root(n) {
+         let newN = 0;  // и даже с let, не var! :D
+         while (n > 0) {
+            newN += n % 10;
+            n = Math.floor(n / 10);
+         }
+
+         if (newN > 9)
+            return digital_root(newN);
+
+         return newN;
       }
    </script>
 </body>
