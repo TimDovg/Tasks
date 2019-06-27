@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <script>
+        // 1.(10 баллов) Написать ф-цию, которая будет может вызываться неограниченное количество раз в виде multipleSum(1)(2)(3)(4)(5)() // 15
+
+        let sum = 0; //тут все не правильно, замыкание
+        function multipleSum(n) {
+            sum += n;
+            return sum;
+        }
+
+        /* 2.(10 баллов ) Написать ф-цию проверки на монотонность
+        [1, 2, 3] - true
+            [1, 1, 2] - true
+            [1, 1, 1] - true
+            [3, 2, 1] - true
+            [2, 2, 1] - true
+            [1, 1, 1, 2] - true
+            [1, 2, 1, 2] - false
+            [1, 2, 1] - false */
+
+        function Monoton(arr) {
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] < arr[i - 1]) return false;
+            }
+            return true;
+        }
+        
+        /* 3.(20 баллов) написать ф-цию, которая отсортирует массив в порядке
+
+        Приоритеты продуктов такие:
+
+        1 READY
+        1.1   origin=BANK
+        1.2   origin=CLIENT
+        2 IN PROGRESS / IN PROGRESS2
+        3 SCORING
+        4 REJECTED
+        5 NEW
+        6 ACTIVE
+
+        let products = [
+            {id: 'overdraft', status: 'ACTIVATED'},
+            {id: 'overdraft', status: 'READY', origin:'CLIENT'},
+            {id: 'creditLine', status: 'READY', origin:'CLIENT'},
+            {id: 'overdraft', status: 'REJECTED'},
+            {id: 'turnover', status: 'ACTIVATED'},
+            {id: 'overdraft', status: 'READY', origin:'BANK'},
+            {id: 'turnover', status: 'NEW'},
+            {id: 'turnover', status: 'IN PROGRESS'},
+            {id: 'creditLine', status: 'ACTIVATED'},
+            {id: 'creditLine', status: 'ACTIVE'},
+            {id: 'turnover', status: 'READY', origin:'BANK'},
+            {id: 'creditLine', status: 'IN PROGRESS2'},
+            {id: 'creditLine', status: 'SCORING'}
+          ];
+          */
+
+        function sortClients(arr) {
+            let sortArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].status == 'ACTIVE' || arr[i].status == 'ACTIVATED') {
+                    sortArr.unshift(arr[i]);
+                }
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].status == 'NEW') {
+                    sortArr.unshift(arr[i]);
+                }
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].status == 'REJECTED') {
+                    sortArr.unshift(arr[i]);
+                }
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].status == 'SCORING') {
+                    sortArr.unshift(arr[i]);
+                }
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].status == 'IN PROGRESS' || arr[i].status == 'IN PROGRESS2') {
+                    sortArr.unshift(arr[i]);
+                }
+            }
+
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].status == 'READY' && arr[i].origin == 'CLIENT') {
+                    sortArr.unshift(arr[i]);
+                }
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].status == 'READY' && arr[i].origin == 'BANK') {
+                    sortArr.unshift(arr[i]);
+                }
+            }
+            return sortArr;
+        }
+
+        let products = [
+            {id: 'overdraft', status: 'ACTIVATED'},
+            {id: 'overdraft', status: 'READY', origin:'CLIENT'},
+            {id: 'creditLine', status: 'READY', origin:'CLIENT'},
+            {id: 'overdraft', status: 'REJECTED'},
+            {id: 'turnover', status: 'ACTIVATED'},
+            {id: 'overdraft', status: 'READY', origin:'BANK'},
+            {id: 'turnover', status: 'NEW'},
+            {id: 'turnover', status: 'IN PROGRESS'},
+            {id: 'creditLine', status: 'ACTIVATED'},
+            {id: 'creditLine', status: 'ACTIVE'},
+            {id: 'turnover', status: 'READY', origin:'BANK'},
+            {id: 'creditLine', status: 'IN PROGRESS2'},
+            {id: 'creditLine', status: 'SCORING'}
+        ];
+
+        console.log( sortClients(products) );
+    </script>
+</body>
+</html>
