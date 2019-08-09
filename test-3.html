@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test 3</title>
+</head>
+<body>
+<script>
+    /*1. Промисифицировать ф-цию из библиотеки FS
+
+    fs.readFile(filename, (err, data) => {
+        if (err) {
+            console.error(err);
+        }
+
+        else {
+            console.log(data);
+        }
+    });*/
+
+
+
+    /*2. Напишите функцию, принимающую на вход строку, и возвращающую первый символ, который встречается в строке только один раз.*/
+
+    function firstNonRepeatingLetter(str) {
+        let newStr = str.toLowerCase();
+
+        for (let i = 0; i < str.length; i++) {
+            for (let j = 0; j < str.length; j++) {
+                if (newStr[i] == newStr[j] && i != j) break;
+                if (j == str.length - 1) return str[i];
+            }
+        }
+
+        return '';
+    }
+
+
+    /*3. Напишите код функции sum, количество слагаемых не ограничено
+    sum(1)(2) // 3
+    sum(1)(2)(3) // 6
+    sum(2)(2)(2)(2)(2) // 10*/
+
+    function sum(n) {
+        sum = n;
+        const proxy = new Proxy(function a () {}, {
+            get (obj, key) {
+                return () => sum;
+            },
+            apply (receiver, ...args) {
+                sum += args[1][0];
+                return proxy;
+            },
+        });
+        return proxy
+    }
+
+    /*4. Напишите код функции reverse (без использования строк, массивов, циклов). На вход только по порядку.
+    console.log(reverse(12345)); // 54321*/
+
+    function reverse(num, r = 0){
+        if(!num) return r;
+        r =  r * 10  + num % 10;
+        return reverse(Math.floor( num / 10), r);
+    }
+
+    /*5 https://www.codewars.com/kata/sums-of-parts/train/javascript*/
+
+    function partsSums(ls) {
+        let arrSum = [];
+        let sum = 0;
+
+        for (let i = 0; i < ls.length; i++) {
+            sum += ls[i];
+        }
+        arrSum.push(sum);
+
+        for (let i = 0; i < ls.length; i++) {
+            sum -= ls[i];
+            arrSum.push(sum);
+        }
+
+        return arrSum;
+    }
+</script>
+</body>
+</html>
